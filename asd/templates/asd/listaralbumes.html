@@ -1,0 +1,15 @@
+{% extends "asd/base.html" %}
+{% load static %} 
+{% block content %}
+{% for i in object_list %}
+<section class="py-5">
+    <div class="container">
+        <img class="rounded-circle article-img" src="{{i.imagen.url}}">
+        <h1><a href="{% url 'album_Detallar' i.id %}">{{i.nombre}}</a></h1>
+        <p class="lead">{{i.artista}}</p>
+        <p>{{i.fecha_salida}}</p>
+        <p>{{i.num_estrellas}}</p>
+    </div>
+</section>
+{% endfor %}
+{% endblock %}

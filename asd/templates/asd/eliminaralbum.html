@@ -1,0 +1,12 @@
+{% extends "asd/base.html" %}
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <legend>Borrar Album</legend>
+        <h2>¿Estas seguro de querer borrar el album "{{object.nombre}}"?</h2>
+        <button class="btn btn-outline-danger" type="submit">Si, estoy seguro</button>
+        <a class="btn btn-outline-secondary" href="{% url 'album_Detallar' object.id %}">Cancelar</a>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "asd/base.html" %}
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <img class="rounded-circle article-img" src="{{ i.autor.profile.image.url}}">
+        <h1>{{object.nombre}}</h1>
+        <p class="lead">{{object.fecha_salida}}</p>
+        {% if object.autor == user %}
+        <div>
+        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'album_Actualizar' object.id %}">Actualizar</a>
+        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'album_Eliminar' object.id %}">Eliminar</a>
+        </div>
+        {% endif %}
+        <p>{{object.artista}}</p>
+    </div>
+</section>
+{% endblock %}

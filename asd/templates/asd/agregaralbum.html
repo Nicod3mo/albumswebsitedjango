@@ -1,0 +1,12 @@
+{% extends "asd/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <legend>Album</legend>
+        {{ form|crispy }}
+        <input type="submit" value="Listo">
+    </form>
+
+{% endblock %}

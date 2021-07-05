@@ -1,0 +1,10 @@
+{% extends "asd/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Listo">
+        <button><a href="{% url 'register' %}">Registrarse</a></button>
+    </form>
+{% endblock %}
